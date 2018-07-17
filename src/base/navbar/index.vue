@@ -1,38 +1,37 @@
 <template>
-  <div class="mine-navbar">
-    <div class="mine-navbar-left" v-if="$slots.left">
-      <slot name="left"></slot>
+    <div class="mine-navbar">
+      <div class="mine-navbar-left" v-if="$slots.left">
+        <slot name="left"></slot>
+      </div>
+      <div class="mine-navbar-center" v-if="$slots.center">
+        <slot name="center"></slot>
+      </div>
+      <div class="mine-navbar-right" v-if="$slots.right">
+        <slot name="right"></slot>
+      </div>
+      <h1 class="mine-navbar-title" v-if="title">
+        <span class="mine-navbar-text" v-text="title"></span>
+      </h1>
     </div>
-    <div class="mine-navbar-center" v-if="$slots.center">
-      <slot name="center"></slot>
-    </div>
-    <div class="mine-navbar-right" v-if="$slots.right">
-      <slot name="right"></slot>
-    </div>
-    <h1 class="mine-navbar-title" v-if="title">
-      <span class="mine-navbar-text" v-text="title"></span>
-    </h1>
-  </div>
 </template>
-
 <script>
-    export default {
-        name: "MeNavbar",
-        props: {
-          title: {
-            type: String,
-            default: ''
-          }
-        }
+  export default {
+    name: 'MeNavbar',
+    props: {
+      title: {
+        type: String,
+        default: ''
+      }
     }
+  };
 </script>
 
 <style lang="scss" scoped>
   @import "~assets/scss/mixins";
 
   .mine-navbar {
-    @include flex-between();
     position: relative;
+    @include flex-between();
     height: 50px;
     background-color: #fff;
 
@@ -70,12 +69,13 @@
       @include flex-center();
       text-align: center;
     }
-
     &-text {
       width: 100%;
-      line-height: 1.5;
       font-size: 18px;
+      text-align: center;
+      line-height: 1.5;
       @include ellipsis();
     }
   }
+
 </style>

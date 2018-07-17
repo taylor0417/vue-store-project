@@ -1,6 +1,6 @@
-# mall
+# yjlmall
 
-> vue mall
+> 在线商城webapp
 
 ## Build Setup
 

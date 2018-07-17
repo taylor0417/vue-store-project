@@ -18,35 +18,35 @@ const routes = [
       {
         name: 'home-product',
         path: 'product/:id',
-        component: () => import('pages/product'),
+        component: () => import('pages/product')
       }
     ]
   },
   {
     name: 'category',
     path: '/category',
-    component: () => import('pages/category'),
+    component: () => import('pages/category')
   },
   {
     name: 'cart',
     path: '/cart',
-    component: () => import('pages/cart'),
+    component: () => import('pages/cart')
   },
   {
     name: 'personal',
     path: '/personal',
-    component: () => import('pages/personal'),
+    component: () => import('pages/personal')
   },
   {
     name: 'search',
     path: '/search',
-    component: () => import('pages/search'),
+    component: () => import('pages/search')
   },
   {
     path: '*',
     redirect: '/home'
   }
-]
+];
 
 export default new Router({
   routes
